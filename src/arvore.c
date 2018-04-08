@@ -22,8 +22,8 @@ node* createTree(void)
 	node *root, *sim, *nao;
 
 	root = createNode("É um animal?\n");
-	sim = createNode("É um gato!\n");
-	nao = createNode("É uma árvore!\n");
+	sim = createNode("gato\n");
+	nao = createNode("árvore\n");
 	root->left = sim;
 	root->right = nao;
 	root->depth = 1;

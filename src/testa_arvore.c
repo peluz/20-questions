@@ -36,11 +36,11 @@ SCENARIO("Teste de criação", "[createTree, createNode]")
 			}
 
 			THEN("A resposta direita está correta") {
-				REQUIRE(strcmp("É um gato!\n", root->left->text) == 0);
+				REQUIRE(strcmp("gato\n", root->left->text) == 0);
 			}
 
 			THEN("A resposta esquerda está correta") {
-				REQUIRE(strcmp("É uma árvore!\n", root->right->text) == 0);
+				REQUIRE(strcmp("árvore\n", root->right->text) == 0);
 			}
 
 			THEN("Depth do root é 1") {
