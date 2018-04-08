@@ -27,6 +27,8 @@ node* createTree(void)
 	root->left = sim;
 	root->right = nao;
 	root->depth = 1;
+	sim->depth = 2;
+	nao->depth = 2;
 }
 
 void freeTree(node* root)
@@ -97,24 +99,4 @@ void save(node *root, FILE *fp)
 	fprintf(fp, "%s", root->text);
 	save(root->left, fp);
 	save(root->right, fp);
-}
-
-void load(node *root, FILE* fp)
-{
-	char text[150];
-
-	if (fgets(text, 150, fp) == NULL)
-	{
-		printf("hey\n");
-		return;
-	}
-
-	if (strcmp(text, "-1\n") == 0)
-	{
-		return;
-	}
-
-	root = createNode(text);
-	load(root->left, fp);
-	load(root->right, fp);
 }

@@ -210,14 +210,14 @@ SCENARIO("Teste de remoção", "[removeNode]")
 
 // SCENARIO("Teste de salvar e carregar", "[save, load]")
 // {
-// 	GIVEN("Árvores existem, arquivo de salvar aberto")
+// 	GIVEN("Árvores existem")
 // 	{
-// 		node *root, *loaded;
+// 		node *root, *loaded = NULL;
 // 		root = createTree();
-// 		FILE *fp = fopen("test.txt", "w");
 
 // 		WHEN("Salva árvore no arquivo e depois a carrega")
 // 		{
+// 			FILE *fp = fopen("test.txt", "w");
 // 			save(root, fp);
 // 			fclose(fp);
 // 			fp = fopen("test.txt", "r");
@@ -225,9 +225,10 @@ SCENARIO("Teste de remoção", "[removeNode]")
 
 // 			THEN("Árvore salva e carregada são idênticas")
 // 			{
-// 				REQUIRE(root->text == loaded->text);
-// 				REQUIRE(root->left->text == loaded->left->text);
-// 				REQUIRE(root->right->text == loaded->right->text);
+// 				inorder(loaded);
+// 				REQUIRE(strcmp(root->text,loaded->text));
+// 				REQUIRE(strcmp(root->left->text, loaded->left->text));
+// 				REQUIRE(strcmp(root->right->text, loaded->right->text));
 // 			}
 
 // 			fclose(fp);

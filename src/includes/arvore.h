@@ -1,4 +1,7 @@
 /**
+ * @file arvore.h 
+ * @author Pedro Luz
+ * 
  * API de operações sobre árvore binária
  */
 
@@ -25,7 +28,6 @@ node* createNode(char const *text);
 /** 
  * Cria árvore cuja raíz é a pergunta default
  * e cujas árvores são as respostas default
- * Recebe como parâmetro um ponteiro para node
  * Retorna ponteiro que aponta para raíz
  */
 node* createTree(void);
@@ -56,12 +58,5 @@ int removeNode(node *parent, node *son);
  * e arquivo onde será salva a árvore
  */
 void save(node *root, FILE *fp);
-
-/**
- * Carrega árvore salva em arquivo
- * Recebe como parâmetros ponteiro para a raiz onde será carregada a árvore
- * e arquivo onde está salva a árvore
- */
-void load(node *root, FILE *fp);
 
 #endif

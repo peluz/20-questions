@@ -1,0 +1,15 @@
+É um animal?
+é pequeno?
+gato
+-1
+-1
+tigre
+-1
+-1
+é artifical?
+poste
+-1
+-1
+árvore
+-1
+-1

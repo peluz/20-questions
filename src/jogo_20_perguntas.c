@@ -5,6 +5,7 @@
 #include "includes/arvore.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int main(void) {
 	node *temp;
@@ -19,6 +20,7 @@ int main(void) {
 	char correct[150];
 	char incorrect[150];
 	int prevBranch;
+	FILE* fp;
 
 	printf("Pense em algo para eu tentar advinhar!\nResponda s para sim, n para não e q para sair do jogo!\n");
 
@@ -106,6 +108,10 @@ int main(void) {
 
 			if (answer == 'q')
 			{
+				printf("Saindo do jogo! Árvore salva em arvore.txt\n");
+				fp = fopen("arvore.txt", "w");
+				save(root, fp);
+				fclose(fp);
 				break;
 			}
 
