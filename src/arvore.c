@@ -11,7 +11,6 @@
 node* createNode(char const *data) 
 {
 	node *new_node = (struct node*) malloc(sizeof(struct node));
-	printf("%s", data);
 	strcpy(new_node->text, data);
 	new_node->left = new_node->right = NULL;
 	new_node->depth = 0;

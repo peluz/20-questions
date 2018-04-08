@@ -9,17 +9,23 @@ DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 _OBJ = arvore.o testa_arvore.o test_main.o 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
+jogo: obj/arvore.o obj/jogo_20_perguntas.o
+	$(CC) $^ -o jogo $(CFLAGS)
+
+obj/jogo_20_perguntas.o:
+	$(CC) -o obj/jogo_20_perguntas.o -c jogo_20_perguntas.c $(CFLAGS)
+
 obj/testa_arvore.o: 
-	g++ -o obj/testa_arvore.o -c testa_arvore.c $(CFLAGS)
+	$(CC) -o obj/testa_arvore.o -c testa_arvore.c $(CFLAGS)
 
 obj/test_main.o:
-	g++ -o obj/test_main.o -c test_main.c $(CFLAGS)
+	$(CC) -o obj/test_main.o -c test_main.c $(CFLAGS)
 
 obj/arvore.o:
-	g++ -o obj/arvore.o -c arvore.c $(CFLAGS)
+	$(CC) -o obj/arvore.o -c arvore.c $(CFLAGS)
 
 test:  obj/arvore.o obj/test_main.o obj/testa_arvore.o
-	g++ $^ -o catch.exe $(CFLAGS)
+	$(CC) $^ -o catch.exe $(CFLAGS)
 
 .PHONY: clean
 
