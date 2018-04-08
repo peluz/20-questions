@@ -1,9 +1,8 @@
-IDIR =../include
+IDIR =include
 CC=gcc
-CFLAGS=-I$(IDIR)
+CFLAGS=-I$(IDIR) -ftest-coverage -fprofile-arcs
 
 ODIR=obj
-LDIR =../lib
 
 LIBS=-lm
 
@@ -23,4 +22,4 @@ hellomake: $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	rm -f $(ODIR)/*.o *~ core $(IDIR)/*~ 
