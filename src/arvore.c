@@ -38,3 +38,18 @@ void freeTree(node* root)
 	freeTree(root->right);
 	free(root);
 }
+
+int insert(node *parent, node *son, int branch)
+{
+	switch (branch)
+	{
+		case 0:
+			parent->left = son;
+			return 0;
+		case 1:
+			parent->right = son;
+			return 0;
+		default:
+			return 1;
+	}
+}

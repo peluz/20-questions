@@ -21,6 +21,7 @@ SCENARIO("Teste de criação", "[createTree, createNode]")
 				REQUIRE(root->left == NULL);
 				REQUIRE(root->right == NULL);
 			}
+			free(root);
 		}
 
 		WHEN("Uma árvore é criada") {
@@ -41,7 +42,40 @@ SCENARIO("Teste de criação", "[createTree, createNode]")
 			THEN("A resposta esquerda está correta") {
 				REQUIRE(strcmp("É uma árvore!\n", root->right->text) == 0);
 			}
+
+			freeTree(root);
 		}
 	}
 }
 
+SCENARIO("Teste de inserção", "[insert]")
+{
+	GIVEN("Parent e son criados")
+	{
+		node *parent, *son;
+		parent = createNode("É maior que um cão?");
+		son = createNode("É um cavalo!");
+
+		WHEN("Inserção a esquerda")
+		{
+			insert(parent, son, 0);
+
+			THEN("son é nó a esquerda de parent")
+			{
+				REQUIRE(parent->left == son);
+			}
+		}
+
+		WHEN("Inserção a direita")
+		{
+			insert(parent, son, 1);
+
+			THEN("son é nó a direita de parent")
+			{
+				REQUIRE(parent->right == son);
+			}
+		}
+
+		freeTree(parent);
+	}
+}

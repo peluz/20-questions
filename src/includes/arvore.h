@@ -33,4 +33,11 @@ node* createTree(void);
  */
 void freeTree(node* root);
 
+/**
+ * Adiciona filho a esquerda de parent se branch = 0
+ * e a direita de parent se branch = 1
+ * retorna 1 caso seja bem sucedido, 0 caso contrário
+ */
+int insert(node *parent, node *son, int branch);
+
 #endif
