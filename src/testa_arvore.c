@@ -43,6 +43,10 @@ SCENARIO("Teste de criação", "[createTree, createNode]")
 				REQUIRE(strcmp("É uma árvore!\n", root->right->text) == 0);
 			}
 
+			THEN("Depth do root é 1") {
+				REQUIRE(root->depth == 1);
+			}
+
 			freeTree(root);
 		}
 	}
@@ -64,6 +68,11 @@ SCENARIO("Teste de inserção", "[insert]")
 			{
 				REQUIRE(parent->left == son);
 			}
+
+			THEN("depth do som é o depth do pai + 1")
+			{
+				REQUIRE(son->depth == parent->depth + 1);
+			}
 		}
 
 		WHEN("Inserção a direita")
@@ -73,6 +82,11 @@ SCENARIO("Teste de inserção", "[insert]")
 			THEN("son é nó a direita de parent")
 			{
 				REQUIRE(parent->right == son);
+			}
+
+			THEN("depth do som é o depth do pai + 1")
+			{
+				REQUIRE(son->depth == parent->depth + 1);
 			}
 		}
 
@@ -89,6 +103,8 @@ SCENARIO("Teste de inserção", "[insert]")
 				REQUIRE(parent->left != son);
 				REQUIRE(parent->right != son);
 			}
+
+			freeTree(son);
 		}
 
 		freeTree(parent);
@@ -113,4 +129,81 @@ SCENARIO("Teste de inserção", "[insert]")
 		freeTree(parent);
 		freeTree(son);
 	}
+}
+
+SCENARIO("Teste de remoção", "[remove]")
+{
+	GIVEN("Parent e son existem, son filho de parent")
+	{
+		node *parent, *leftSon, *rightSon;
+		parent = createTree();
+		leftSon = parent->left;
+		rightSon = parent->right;
+
+		WHEN("Remove son a esquerda")
+		{
+			int feedback = remove(parent, leftSon);
+
+			THEN("onde havia son, agora é null")
+			{
+				REQUIRE(parent->left == NULL);
+			}
+			THEN("o right son continua igual")
+			{
+				REQUIRE(parent->right == rightSon);
+			}
+			THEN("feedback não retorna erro")
+			{
+				REQUIRE(feedback == 0);
+			}
+		}
+
+		WHEN("Remove son a direita")
+		{
+			int feedback = remove(parent, rightSon);
+
+			THEN("onde havia son, agora é null")
+			{
+				REQUIRE(parent->right == NULL);
+			}
+			THEN("o left son continua igual")
+			{
+				REQUIRE(parent->left == leftSon);
+			}
+			THEN("feedback não retorna erro")
+			{
+				REQUIRE(feedback == 0);
+			}
+		}
+
+		freeTree(parent);
+	}
+
+	GIVEN("Parent e son existem, son não é filho de parent")
+	{
+		node *parent, *son, *leftSon, *rightSon;
+		parent = createTree();
+		son = createNode("Eu sou um farsante!\n");
+		leftSon = parent->left;
+		rightSon = parent->right;
+
+		WHEN("Remove son falso de parent")
+		{
+			int feedback = remove(parent, son);
+
+			THEN("feedback retorna erro")
+			{
+				REQUIRE(feedback == 1);
+			}
+			THEN("filhos verdadeiros não se alteram")
+			{
+				REQUIRE(parent->left == leftSon);
+				REQUIRE(parent->right == rightSon);
+			}
+		}
+
+		freeTree(parent);
+		freeTree(son);
+	}
+
 }

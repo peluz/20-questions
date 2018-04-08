@@ -1,6 +1,6 @@
 IDIR =include
 CC=g++
-CFLAGS=-I$(IDIR) -ftest-coverage -fprofile-arcs -std=c++11
+CFLAGS=-I$(IDIR) -ftest-coverage -fprofile-arcs -std=c++11 -g
 ODIR=obj
 
 _DEPS = arvore.h catch.hpp
