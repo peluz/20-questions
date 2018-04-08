@@ -27,4 +27,10 @@ node* createNode(char const *text);
  */
 node* createTree(void);
 
+/**
+ * Libera memória alocada para a árvore
+ * Recebe como parâmetro ponteiro para a raiz da árvore
+ */
+void freeTree(node* root);
+
 #endif

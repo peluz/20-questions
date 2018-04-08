@@ -6,8 +6,8 @@
 #include <stdio.h>
 
 int main(void) {
-	struct node* node = NULL;
-	node = createNode("Eu sou um nó");
-	printf("%s", node->text);
+	node* root = NULL;
+	root = createTree();
+	freeTree(root);
 	return 0;
 }

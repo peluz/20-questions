@@ -26,3 +26,15 @@ node* createTree(void)
 	root->left = sim;
 	root->right = nao;
 }
+
+void freeTree(node* root)
+{
+	if (root == NULL) 
+	{
+		return;
+	}
+
+	freeTree(root->left);
+	freeTree(root->right);
+	free(root);
+}

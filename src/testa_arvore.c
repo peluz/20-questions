@@ -44,3 +44,4 @@ SCENARIO("Teste de criação", "[createTree, createNode]")
 		}
 	}
 }
+
