@@ -50,11 +50,11 @@ SCENARIO("Teste de criação", "[createTree, createNode]")
 
 SCENARIO("Teste de inserção", "[insert]")
 {
-	GIVEN("Parent e son criados")
+	GIVEN("Parent e son criados, parent sem filhos")
 	{
 		node *parent, *son;
-		parent = createNode("É maior que um cão?");
-		son = createNode("É um cavalo!");
+		parent = createNode("É maior que um cão?\n");
+		son = createNode("É um cavalo!\n");
 
 		WHEN("Inserção a esquerda")
 		{
@@ -76,6 +76,41 @@ SCENARIO("Teste de inserção", "[insert]")
 			}
 		}
 
+		WHEN("Branch diferente de 1 ou 0")
+		{
+			int feedback = insert(parent, son, 2);
+
+			THEN("feedback sinaliza erro")
+			{
+				REQUIRE(feedback == 1);
+			}
+			THEN("Filhos de parent não são son")
+			{
+				REQUIRE(parent->left != son);
+				REQUIRE(parent->right != son);
+			}
+		}
+
 		freeTree(parent);
+	}
+
+	GIVEN("Parent e son criados, parent com filhos")
+	{
+		node *parent, *son;
+		parent = createTree();
+		son = createNode("Eu sou um filhote de cuco!\n");
+
+		WHEN("Tentativa de inserir filho numa posição ocupada")
+		{
+			int feedback = insert(parent, son, 0);
+
+			THEN("insert retorna erro")
+			{
+				REQUIRE(feedback == 1);
+			}
+		}
+
+		freeTree(parent);
+		freeTree(son);
 	}
 }

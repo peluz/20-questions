@@ -44,9 +44,17 @@ int insert(node *parent, node *son, int branch)
 	switch (branch)
 	{
 		case 0:
+			if (parent->left != NULL)
+			{
+				break;
+			}
 			parent->left = son;
 			return 0;
 		case 1:
+			if (parent->right != NULL)
+			{
+				break;
+			}
 			parent->right = son;
 			return 0;
 		default:
