@@ -131,7 +131,7 @@ SCENARIO("Teste de inserção", "[insert]")
 	}
 }
 
-SCENARIO("Teste de remoção", "[remove]")
+SCENARIO("Teste de remoção", "[removeNode]")
 {
 	GIVEN("Parent e son existem, son filho de parent")
 	{
@@ -142,7 +142,7 @@ SCENARIO("Teste de remoção", "[remove]")
 
 		WHEN("Remove son a esquerda")
 		{
-			int feedback = remove(parent, leftSon);
+			int feedback = removeNode(parent, leftSon);
 
 			THEN("onde havia son, agora é null")
 			{
@@ -160,7 +160,7 @@ SCENARIO("Teste de remoção", "[remove]")
 
 		WHEN("Remove son a direita")
 		{
-			int feedback = remove(parent, rightSon);
+			int feedback = removeNode(parent, rightSon);
 
 			THEN("onde havia son, agora é null")
 			{
@@ -189,7 +189,7 @@ SCENARIO("Teste de remoção", "[remove]")
 
 		WHEN("Remove son falso de parent")
 		{
-			int feedback = remove(parent, son);
+			int feedback = removeNode(parent, son);
 
 			THEN("feedback retorna erro")
 			{
@@ -207,3 +207,30 @@ SCENARIO("Teste de remoção", "[remove]")
 	}
 
 }
+
+// SCENARIO("Teste de salvar e carregar", "[save, load]")
+// {
+// 	GIVEN("Árvores existem, arquivo de salvar aberto")
+// 	{
+// 		node *root, *loaded;
+// 		root = createTree();
+// 		FILE *fp = fopen("test.txt", "w");
+
+// 		WHEN("Salva árvore no arquivo e depois a carrega")
+// 		{
+// 			save(root, fp);
+// 			fclose(fp);
+// 			fp = fopen("test.txt", "r");
+// 			load(loaded, fp);
+
+// 			THEN("Árvore salva e carregada são idênticas")
+// 			{
+// 				REQUIRE(root->text == loaded->text);
+// 				REQUIRE(root->left->text == loaded->left->text);
+// 				REQUIRE(root->right->text == loaded->right->text);
+// 			}
+
+// 			fclose(fp);
+// 		}
+// 	}
+// }

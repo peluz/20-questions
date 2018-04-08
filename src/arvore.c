@@ -11,6 +11,7 @@
 node* createNode(char const *data) 
 {
 	node *new_node = (struct node*) malloc(sizeof(struct node));
+	printf("%s", data);
 	strcpy(new_node->text, data);
 	new_node->left = new_node->right = NULL;
 	new_node->depth = 0;
@@ -66,7 +67,7 @@ int insert(node *parent, node *son, int branch)
 	}
 }
 
-int remove(node *parent, node *son)
+int removeNode(node *parent, node *son)
 {
 	if(parent->left != son && parent->right != son)
 	{
@@ -84,4 +85,37 @@ int remove(node *parent, node *son)
 
 	freeTree(son);
 	return 0;
+}
+
+void save(node *root, FILE *fp)
+{
+	if(root == NULL)
+	{
+		fprintf(fp, "-1\n");
+		return;
+	}
+
+	fprintf(fp, "%s", root->text);
+	save(root->left, fp);
+	save(root->right, fp);
+}
+
+void load(node *root, FILE* fp)
+{
+	char text[150];
+
+	if (fgets(text, 150, fp) == NULL)
+	{
+		printf("hey\n");
+		return;
+	}
+
+	if (strcmp(text, "-1\n") == 0)
+	{
+		return;
+	}
+
+	root = createNode(text);
+	load(root->left, fp);
+	load(root->right, fp);
 }

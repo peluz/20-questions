@@ -5,6 +5,8 @@
 #ifndef ARVORE
 #define ARVORE
 
+#include <stdio.h>
+
 typedef struct node {
 	char text[200];
 	int depth;
@@ -46,6 +48,20 @@ int insert(node *parent, node *son, int branch);
  * Recebe como parâmetros ponteiros para son e parent
  * retorna 0 caso bem sucedido, 1 caso contrário
  */
-int remove(node *parent, node *son);
+int removeNode(node *parent, node *son);
+
+/**
+ * Salva árvore serializada em arquivo
+ * Recebe como parâmetros ponteiro para raiz da árvore
+ * e arquivo onde será salva a árvore
+ */
+void save(node *root, FILE *fp);
+
+/**
+ * Carrega árvore salva em arquivo
+ * Recebe como parâmetros ponteiro para a raiz onde será carregada a árvore
+ * e arquivo onde está salva a árvore
+ */
+void load(node *root, FILE *fp);
 
 #endif
