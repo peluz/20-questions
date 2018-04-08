@@ -10,16 +10,36 @@
 SCENARIO("Teste de criação", "[createTree, createNode]")
 {
 	GIVEN("Não há árvore nem nós") {
-		struct node* node = NULL;
+		node* root = NULL;
 
 		WHEN("Um nó é criado") {
-			node = createNode("Eu sou um nó\n");
+			root = createNode("Eu sou um nó\n");
 
 			THEN("O texto é correto e esquerda e direita são NULL") {
-				REQUIRE(node != NULL);
-				REQUIRE(strcmp("Eu sou um nó\n", node->text) == 0);
-				REQUIRE(node->left == NULL);
-				REQUIRE(node->right == NULL);
+				REQUIRE(root != NULL);
+				REQUIRE(strcmp("Eu sou um nó\n", root->text) == 0);
+				REQUIRE(root->left == NULL);
+				REQUIRE(root->right == NULL);
+			}
+		}
+
+		WHEN("Uma árvore é criada") {
+			root = createTree();
+
+			THEN("Node não é NULL") {
+				REQUIRE(root != NULL);
+			}
+
+			THEN("A pergunta está correta") {
+				REQUIRE(strcmp("É um animal?\n", root->text) == 0);
+			}
+
+			THEN("A resposta direita está correta") {
+				REQUIRE(strcmp("É um gato!\n", root->left->text) == 0);
+			}
+
+			THEN("A resposta esquerda está correta") {
+				REQUIRE(strcmp("É uma árvore!\n", root->right->text) == 0);
 			}
 		}
 	}

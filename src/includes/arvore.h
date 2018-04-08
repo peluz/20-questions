@@ -23,9 +23,8 @@ node* createNode(char const *text);
  * Cria árvore cuja raíz é a pergunta default
  * e cujas árvores são as respostas default
  * Recebe como parâmetro um ponteiro para node
- * Retorna 1 se conseguir criar árvore, 0 caso 
- * contrário
+ * Retorna ponteiro que aponta para raíz
  */
-int createTree(node *root);
+node* createTree(void);
 
 #endif
