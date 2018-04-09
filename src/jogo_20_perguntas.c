@@ -13,8 +13,6 @@ int main(void) {
 	node *prev = NULL;
 	node *aux = NULL;
 	node *aux2 = NULL;
-	root = createTree();
-	temp = root;
 	char answer;
 	char question[200];
 	char correct[200];
@@ -36,9 +34,13 @@ int main(void) {
 	{
 		fp = fopen("arvore.txt", "r");
 		root = load(fp);
-		temp = root;
 		fclose(fp);
 	}
+	else
+	{
+		root = createTree();
+	}
+	temp = root;
 
 
 	while(1)
@@ -125,10 +127,23 @@ int main(void) {
 
 			if (answer == 'q')
 			{
-				printf("Saindo do jogo! Árvore salva em arvore.txt\n");
-				fp = fopen("arvore.txt", "w");
-				save(root, fp);
-				fclose(fp);
+				printf("Saindo do jogo!Deseja salvar árvore em arvore.txt?\n");
+				do
+				{
+					scanf("%c", &answer);
+				}
+				while (answer != 's' && answer != 'n' && answer != 'q' );
+				if (answer == 's')
+				{
+					fp = fopen("arvore.txt", "w");
+					save(root, fp);
+					fclose(fp);
+					printf("Árvore salva em arvore.txt\n");
+				}
+				else
+				{
+					printf("Árvore não salva\n");
+				}
 				break;
 			}
 
