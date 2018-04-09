@@ -1,7 +1,59 @@
 É um animal?
+é grande?
+mora no mar?
+tubarão
+-1
+-1
+come carne?
+tigre
+-1
+-1
+elefante
+-1
+-1
+é aquático?
+arraia
+-1
+-1
+late?
+cachorro
+-1
+-1
+tem orelhas compridas?
+coelho
+-1
+-1
 gato
 -1
 -1
+é artificial?
+se locomove?
+é de uso público normalmente?
+ônibus
+-1
+-1
+carro
+-1
+-1
+poste
+-1
+-1
+é grande?
+é um ser vivo?
 árvore
+-1
+-1
+Fica no espaço?
+é um satélite?
+lua
+-1
+-1
+Sol
+-1
+-1
+montanha
+-1
+-1
+flor
 -1
 -1
