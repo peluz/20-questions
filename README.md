@@ -13,3 +13,7 @@ rodar "./jogo"
 Documentação doxygen na pasta "html"
 
 Documentação de testes no arquivo "documentação_teste.odt"
+
+Backup de tree inicial em src/default_tree.txt
+	Para carregá-la, copiar seu conteudo para arvore.txt
+	e iniciar o jogo normalmente
