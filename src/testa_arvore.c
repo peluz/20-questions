@@ -43,10 +43,6 @@ SCENARIO("Teste de criação", "[createTree, createNode]")
 				REQUIRE(strcmp("árvore\n", root->right->text) == 0);
 			}
 
-			THEN("Depth do root é 1") {
-				REQUIRE(root->depth == 1);
-			}
-
 			freeTree(root);
 		}
 	}
@@ -68,11 +64,6 @@ SCENARIO("Teste de inserção", "[insert]")
 			{
 				REQUIRE(parent->left == son);
 			}
-
-			THEN("depth do som é o depth do pai + 1")
-			{
-				REQUIRE(son->depth == parent->depth + 1);
-			}
 		}
 
 		WHEN("Inserção a direita")
@@ -82,11 +73,6 @@ SCENARIO("Teste de inserção", "[insert]")
 			THEN("son é nó a direita de parent")
 			{
 				REQUIRE(parent->right == son);
-			}
-
-			THEN("depth do som é o depth do pai + 1")
-			{
-				REQUIRE(son->depth == parent->depth + 1);
 			}
 		}
 
@@ -208,30 +194,29 @@ SCENARIO("Teste de remoção", "[removeNode]")
 
 }
 
-// SCENARIO("Teste de salvar e carregar", "[save, load]")
-// {
-// 	GIVEN("Árvores existem")
-// 	{
-// 		node *root, *loaded = NULL;
-// 		root = createTree();
+SCENARIO("Teste de salvar e carregar", "[save, load]")
+{
+	GIVEN("Árvores existem")
+	{
+		node *root, *loaded = NULL;
+		root = createTree();
 
-// 		WHEN("Salva árvore no arquivo e depois a carrega")
-// 		{
-// 			FILE *fp = fopen("test.txt", "w");
-// 			save(root, fp);
-// 			fclose(fp);
-// 			fp = fopen("test.txt", "r");
-// 			load(loaded, fp);
+		WHEN("Salva árvore no arquivo e depois a carrega")
+		{
+			FILE *fp = fopen("test.txt", "w");
+			save(root, fp);
+			fclose(fp);
+			fp = fopen("test.txt", "r");
+			loaded = load(fp);
 
-// 			THEN("Árvore salva e carregada são idênticas")
-// 			{
-// 				inorder(loaded);
-// 				REQUIRE(strcmp(root->text,loaded->text));
-// 				REQUIRE(strcmp(root->left->text, loaded->left->text));
-// 				REQUIRE(strcmp(root->right->text, loaded->right->text));
-// 			}
+			THEN("Árvore salva e carregada são idênticas")
+			{
+				REQUIRE(strcmp(root->text,loaded->text) == 0);
+				REQUIRE(strcmp(root->left->text, loaded->left->text) == 0);
+				REQUIRE(strcmp(root->right->text, loaded->right->text) == 0);
+			}
 
-// 			fclose(fp);
-// 		}
-// 	}
-// }
+			fclose(fp);
+		}
+	}
+}

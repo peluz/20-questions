@@ -1,15 +1,31 @@
 É um animal?
-é pequeno?
-gato
+é grande?
+mora no mar?
+tubarão
 -1
 -1
 tigre
 -1
 -1
-é artifical?
+gato
+-1
+-1
+é artificial?
+se locomove?
+carro
+-1
+-1
 poste
 -1
 -1
+é grande?
+é um ser vivo?
 árvore
+-1
+-1
+montanha
+-1
+-1
+flor
 -1
 -1

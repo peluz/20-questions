@@ -24,6 +24,23 @@ int main(void) {
 
 	printf("Pense em algo para eu tentar advinhar!\nResponda s para sim, n para não e q para sair do jogo!\n");
 
+	printf("Deseja carregar árvore salva anteriormente?(s/n)\n");
+
+	do
+	{
+		scanf("%c", &answer);
+	}
+	while (answer != 's' && answer != 'n');
+
+	if (answer == 's')
+	{
+		fp = fopen("arvore.txt", "r");
+		root = load(fp);
+		temp = root;
+		fclose(fp);
+	}
+
+
 	while(1)
 	{
 		printf("%s", temp->text);

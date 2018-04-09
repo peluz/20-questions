@@ -1,0 +1,71 @@
+commit d74c4ddb5a54ce373373c342295b24df696dfaca
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sun Apr 8 19:46:13 2018 -0300
+
+    include doxygen documentation
+
+commit fa71da69a5098879d721074a27a3a90cf0d6afd4
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sun Apr 8 18:23:35 2018 -0300
+
+    Jogo funciona
+
+commit 2915b52965bca5beac2b9f275fd9f48fc07551c9
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sun Apr 8 16:54:47 2018 -0300
+
+    implementou funcionalidade básica de jogo
+
+commit 3d53245b7d5dc07d5dd70abc1df6aabc160999cb
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sun Apr 8 16:42:52 2018 -0300
+
+    Biblioteca básica feita e testada
+
+commit 9612327759b4b1b05d06f06127b752100bc2dd54
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sun Apr 8 14:54:54 2018 -0300
+
+    teste de remoção concluido
+
+commit 9c4273b6a4de87c5543e7397e5457e23138e0ea2
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sun Apr 8 14:06:03 2018 -0300
+
+    test some extreme cases of insertion
+
+commit f0dbaec91625384bdeeaa2fb98c0fae6f5becda7
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sun Apr 8 13:56:19 2018 -0300
+
+    Insere nó testado e funcionando
+
+commit db6fb1a27fcc8b2d742abc411e3e961ff3ac65ee
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sun Apr 8 13:36:41 2018 -0300
+
+    implementado free tree, teste com valgrind
+
+commit 925afed2844e304d5b85da5c5a4a50e52f321eab
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sun Apr 8 13:15:59 2018 -0300
+
+    teste de criação bem sucedido
+
+commit e333ddf74adf7878ea6998b7e8108955d953f6e9
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sun Apr 8 12:36:33 2018 -0300
+
+    createnode success
+
+commit 70c9043a780ad43dc8562cba39d7764b78e10206
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sat Apr 7 22:51:51 2018 -0300
+
+    write main catch file
+
+commit db5a06eaf0c26ede1dc0981d874c9f186d3afd87
+Author: Pedro Henrique Luz de Araujo <pedrohluzaraujo@gmail.com>
+Date:   Sat Apr 7 21:59:43 2018 -0300
+
+    first commit

@@ -13,7 +13,6 @@ node* createNode(char const *data)
 	node *new_node = (struct node*) malloc(sizeof(struct node));
 	strcpy(new_node->text, data);
 	new_node->left = new_node->right = NULL;
-	new_node->depth = 0;
 	return new_node;
 }
 
@@ -26,9 +25,6 @@ node* createTree(void)
 	nao = createNode("árvore\n");
 	root->left = sim;
 	root->right = nao;
-	root->depth = 1;
-	sim->depth = 2;
-	nao->depth = 2;
 }
 
 void freeTree(node* root)
@@ -53,7 +49,6 @@ int insert(node *parent, node *son, int branch)
 				break;
 			}
 			parent->left = son;
-			son->depth = parent->depth + 1;
 			return 0;
 		case 1:
 			if (parent->right != NULL)
@@ -61,7 +56,6 @@ int insert(node *parent, node *son, int branch)
 				break;
 			}
 			parent->right = son;
-			son->depth = parent->depth + 1;
 			return 0;
 		default:
 			return 1;
@@ -99,4 +93,19 @@ void save(node *root, FILE *fp)
 	fprintf(fp, "%s", root->text);
 	save(root->left, fp);
 	save(root->right, fp);
+}
+
+node* load(FILE* fp)
+{
+	char text[150];
+
+	if (fgets(text, 150, fp) == NULL || strcmp(text, "-1\n") == 0)
+	{
+		return NULL;
+	}
+
+	node *root = createNode(text);
+	root->left = load(fp);
+	root->right = load(fp);
+	return root;
 }

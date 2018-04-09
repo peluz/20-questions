@@ -12,7 +12,6 @@
 
 typedef struct node {
 	char text[200];
-	int depth;
 	struct node *left;
 	struct node *right;
 }node;
@@ -59,4 +58,10 @@ int removeNode(node *parent, node *son);
  */
 void save(node *root, FILE *fp);
 
+/**
+ * Carrega de arquivo com árvore serializada
+ * Recebe como parâmetro aquivo onde está salva a árvore
+ * Retorna ponteiro para raíz da árvore
+ */
+node* load(FILE *fp);
 #endif
