@@ -97,9 +97,9 @@ void save(node *root, FILE *fp)
 
 node* load(FILE* fp)
 {
-	char text[150];
+	char text[200];
 
-	if (fgets(text, 150, fp) == NULL || strcmp(text, "-1\n") == 0)
+	if (fgets(text, 200, fp) == NULL || strcmp(text, "-1\n") == 0)
 	{
 		return NULL;
 	}

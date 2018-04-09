@@ -4,7 +4,11 @@ mora no mar?
 tubarão
 -1
 -1
+come carne?
 tigre
+-1
+-1
+elefante
 -1
 -1
 gato

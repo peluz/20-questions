@@ -16,9 +16,9 @@ int main(void) {
 	root = createTree();
 	temp = root;
 	char answer;
-	char question[150];
-	char correct[150];
-	char incorrect[150];
+	char question[200];
+	char correct[200];
+	char incorrect[200];
 	int prevBranch;
 	FILE* fp;
 
@@ -66,11 +66,11 @@ int main(void) {
 				printf("Qual é a resposta?\n");
 				scanf("\n");
 
-				fgets(correct, 150, stdin);
+				fgets(correct, 200, stdin);
 
 				printf("Que pergunta distingue a resposta certa da errada?\n");
 
-				fgets(question, 150, stdin);
+				fgets(question, 200, stdin);
 
 				removeNode(prev, temp);
 				aux = createNode(question);
