@@ -1,12 +1,4 @@
 var searchData=
 [
-  ['casedstring',['CasedString',['../structCatch_1_1Matchers_1_1StdString_1_1CasedString.html',1,'Catch::Matchers::StdString']]],
-  ['casesensitive',['CaseSensitive',['../structCatch_1_1CaseSensitive.html',1,'Catch']]],
-  ['catch_5fglobal_5fnamespace_5fdummy',['Catch_global_namespace_dummy',['../structCatch__global__namespace__dummy.html',1,'']]],
-  ['containselementmatcher',['ContainsElementMatcher',['../structCatch_1_1Matchers_1_1Vector_1_1ContainsElementMatcher.html',1,'Catch::Matchers::Vector']]],
-  ['containsmatcher',['ContainsMatcher',['../structCatch_1_1Matchers_1_1StdString_1_1ContainsMatcher.html',1,'Catch::Matchers::StdString']]],
-  ['containsmatcher',['ContainsMatcher',['../structCatch_1_1Matchers_1_1Vector_1_1ContainsMatcher.html',1,'Catch::Matchers::Vector']]],
-  ['counts',['Counts',['../structCatch_1_1Counts.html',1,'Catch']]],
-  ['createnode',['createNode',['../arvore_8h.html#af7b171a141f9cc36a7ffa4d41ea07115',1,'arvore.c']]],
-  ['createtree',['createTree',['../arvore_8h.html#a4aebe922a43b1f8500db00465ee139be',1,'arvore.c']]]
+  ['freetree',['freeTree',['../arvore_8h.html#ab769c542d9821f223ac71aa1a66eb1ad',1,'arvore.h']]]
 ];

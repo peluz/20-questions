@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['removenode',['removeNode',['../arvore_8h.html#a92e5c7cc93312f0a2b7278e386eacf2a',1,'arvore.c']]]
+  ['load',['load',['../arvore_8h.html#ae269e064e26d23701f2a22163dd50cf2',1,'arvore.h']]]
 ];

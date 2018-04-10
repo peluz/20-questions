@@ -12,6 +12,10 @@ elefante
 -1
 -1
 é aquático?
+voa?
+pato
+-1
+-1
 arraia
 -1
 -1
@@ -39,6 +43,10 @@ lancha
 carro
 -1
 -1
+serve de apoio?
+mesa
+-1
+-1
 poste
 -1
 -1
@@ -56,6 +64,10 @@ Sol
 -1
 -1
 montanha
+-1
+-1
+é um metal?
+titânio
 -1
 -1
 flor
