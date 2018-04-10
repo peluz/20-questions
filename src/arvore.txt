@@ -32,6 +32,10 @@ se locomove?
 ônibus
 -1
 -1
+é aquatico?
+lancha
+-1
+-1
 carro
 -1
 -1
